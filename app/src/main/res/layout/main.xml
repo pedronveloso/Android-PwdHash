@@ -29,14 +29,32 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:text="@string/password" />
-	
-	    <EditText
-	        android:id="@+id/password"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:inputType="textPassword"
-			android:importantForAccessibility="no"
-			android:imeOptions="actionDone|flagNoPersonalizedLearning"/>
+
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<EditText
+				android:id="@+id/password"
+				android:layout_weight="1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:inputType="textPassword"
+				android:importantForAccessibility="no"
+				android:imeOptions="actionDone|flagNoPersonalizedLearning"
+				android:importantForAutofill="no" />
+
+			<Button
+				android:id="@+id/newPasswordFill"
+				android:background="@android:color/transparent"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="NEW"
+				/>
+
+		</LinearLayout>
 	
 	    <LinearLayout
 	        style="@style/Label"

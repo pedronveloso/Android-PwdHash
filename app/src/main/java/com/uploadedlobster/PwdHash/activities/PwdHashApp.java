@@ -82,17 +82,24 @@ public class PwdHashApp extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
-		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
-			getWindow().setFlags(LayoutParams.FLAG_SECURE, LayoutParams.FLAG_SECURE);
-		}
-		
+
+		getWindow().setFlags(LayoutParams.FLAG_SECURE, LayoutParams.FLAG_SECURE);
+
 		setContentView(R.layout.main);
 
 		mSiteAddress = (AutoCompleteTextView) findViewById(R.id.siteAddress);
 		mPassword = (EditText) findViewById(R.id.password);
 		mHashedPassword = (TextView) findViewById(R.id.hashedPassword);
 		mCopyBtn = (Button) findViewById(R.id.copyBtn);
+
+		findViewById(R.id.newPasswordFill).setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+
+			}
+		});
+
+
 
 		mPreferences = new Preferences(this);
 		mHistory = new HistoryDataSource(this);
